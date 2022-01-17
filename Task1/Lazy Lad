@@ -1,0 +1,82 @@
+
+#include <cmath>
+2
+#include <cstdio>
+3
+#include <vector>
+4
+#include <iostream>
+5
+#include <algorithm>
+6
+using namespace std;
+7
+​
+8
+/*
+9
+Approach:
+10
+1. Take Input
+11
+2. apply while loop for rooms 
+12
+3. take input as boxes ,
+13
+4. apply for loop form 0 to boxes and reduce the number of boxes acoording to row 
+14
+5. then check, if value of boxes  is greater than or equal to zero , then we increase the number of rows (as some boxes are still left or all the rows are completed) 
+15
+6. else if value of boxes<0 ,so we will break the loop 
+16
+*/
+17
+​
+18
+int main() {
+19
+      
+20
+    int rooms,boxes,rows;
+21
+    cin>>rooms;
+22
+    while(rooms--)
+23
+    {
+24
+        int i;
+25
+        rows=0;
+26
+        cin>>boxes;
+27
+        for(i=0;i<boxes;i++)
+28
+        {
+29
+            boxes=boxes-i-1;  //reduce the number of boxes acoording to row 
+30
+            if(boxes>=0) //if value of boxes  is greater than or equal to zero , then we increase the number of rows (as some boxes are still left or all the rows are completed) 
+31
+                rows++;
+32
+            else   //if value of boxes<0 ,so we will break the loop 
+33
+                break;
+34
+        }
+35
+        cout<<rows;
+36
+        cout<<endl;
+37
+    }
+38
+    
+39
+    return 0;
+40
+}
+41
+​
