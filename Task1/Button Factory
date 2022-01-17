@@ -1,0 +1,28 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+    /*
+        Approach:
+        1. Begin
+        2. Take Input
+        3. check if the given numbers are in the range are not ,if not then print 0 else
+        take out max of P and Q and then subtract it from min of R and S
+        4. return the value
+        5. END
+    */
+    int P,Q,R,S;
+    cin>>P>>Q>>R>>S;
+    if(R>Q || P>S) //checking if R is greater than Q or P>S , then it will not follow the range ,so we will print 0,
+        //i.e. if R=66 Q=33 and P=30 S=15, so in this case there is no common holding of buttons
+        cout<<"0";
+    else
+        cout<<abs(max(P,R)-min(Q,S));  //to check the common timings for the buttons of both , we will find maximum of P and R and minimum of Q and S, and then subtract max-min, it will give us common seconds to hold the buttons
+    return 0;
+}
